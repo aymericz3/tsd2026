@@ -77,6 +77,10 @@ class Program
         Console.WriteLine($"  Sell on {sell.Date:yyyy-MM-dd}  at {sell.Price} PLN");
         Console.WriteLine($"  Return on investment: {Math.Round(roi, 2)}%");
 
+        // ── 3: Save prices to XML ────────────────────────────────────────────
+        Console.WriteLine("\n=== 3: Saving prices to XML ===");
+        GoldResultPrinter.SaveToXml(longRangePrices, "gold_prices.xml");
+
         Console.WriteLine("\nGold Analysis Queries with LINQ Completed.");
     }
 }
