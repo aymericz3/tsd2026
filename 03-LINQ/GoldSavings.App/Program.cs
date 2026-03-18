@@ -62,7 +62,7 @@ class Program
             Console.WriteLine("NOT possible to earn more than 5% from January 2020.");
 
         // ── 2c ──────────────────────────────────────────────────────────────────
-        Console.WriteLine("\n=== 2c: Ranks 11–13 in 2019–2022 price ranking ===");
+        Console.WriteLine("\n=== 2c: Ranks 11-13 in 2019-2022 price ranking ===");
         GoldResultPrinter.PrintPrices(longRangeService.GetSecondTenOpenerDates(), "Ranks 11-13 (second ten openers)");
 
         // ── 2d ──────────────────────────────────────────────────────────────────
@@ -71,7 +71,7 @@ class Program
             Console.WriteLine($"  {year}: {Math.Round(avg, 2)} PLN");
 
         // ── 2e ──────────────────────────────────────────────────────────────────
-        Console.WriteLine("\n=== 2e: Best buy / sell window (2020–2024) ===");
+        Console.WriteLine("\n=== 2e: Best buy / sell window (2020-2024) ===");
         var (buy, sell, roi) = longRangeService.GetBestBuySell();
         Console.WriteLine($"  Buy  on {buy.Date:yyyy-MM-dd}  at {buy.Price} PLN");
         Console.WriteLine($"  Sell on {sell.Date:yyyy-MM-dd}  at {sell.Price} PLN");
@@ -80,6 +80,12 @@ class Program
         // ── 3: Save prices to XML ────────────────────────────────────────────
         Console.WriteLine("\n=== 3: Saving prices to XML ===");
         GoldResultPrinter.SaveToXml(longRangePrices, "gold_prices.xml");
+
+        // ── 4: Read prices from XML (single instruction) ─────────────────────
+        Console.WriteLine("\n=== 4: Reading prices from XML (one instruction) ===");
+        var loadedPrices = GoldResultPrinter.LoadFromXml("gold_prices.xml");
+        Console.WriteLine($"Loaded {loadedPrices.Count} records from XML.");
+        GoldResultPrinter.PrintPrices(loadedPrices.Take(3).ToList(), "First 3 loaded entries");
 
         Console.WriteLine("\nGold Analysis Queries with LINQ Completed.");
     }
