@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T0KuSQbkogM=",
+  "success": true,
+  "projectFilePath": "/Users/Aymeric/Documents/School/ISIMA/ZZ2/S2/Courses/TRO/2 - LINQ/tsd2026/03-LINQ/GoldSavings.App/GoldSavings.App.csproj",
+  "expectedPackageFiles": [
+    "/Users/Aymeric/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
